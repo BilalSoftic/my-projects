@@ -17,11 +17,12 @@ const Projects = () => {
     <section className='projects'>
       <div className='projects-center'>
         {projects.map((project) => {
-          const { title, url, id, img } = project;
+          const { title, url, id, img, source_url } = project;
+          console.log(source_url);
           return (
             <a
               key={id}
-              href={url}
+              href={url ? url : source_url}
               target='_blank'
               rel='noreferrer'
               className='project'

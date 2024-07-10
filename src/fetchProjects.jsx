@@ -18,10 +18,10 @@ const useFetchProjects = () => {
       });
 
       const newProjects = response.items.map((item) => {
-        const { title, url, image } = item.fields;
+        const { title, url, image, source_url } = item.fields;
         const id = item.sys.id;
         const img = image?.fields?.file?.url;
-        return { title, url, id, img };
+        return { title, url, id, img, source_url };
       });
       setProjects(newProjects);
       setLoading(false);
